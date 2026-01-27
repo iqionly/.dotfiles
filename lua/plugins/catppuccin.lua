@@ -1,7 +1,9 @@
 return {
     "catppuccin/nvim",
     lazy = true,
+    enabled = true,
     name = "catppuccin",
+    priority = 1000,
     opts = {
         lsp_styles = {
             underlines = {
