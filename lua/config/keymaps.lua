@@ -18,6 +18,3 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set("n", "gr", function()
   require("telescope.builtin").lsp_references()
 end, { desc = "LSP references" });
-
-vim.keymap.set('n', '<C-P>', '<C-I>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-\'', ':jumps<CR>', { noremap = true, silent = true })

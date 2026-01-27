@@ -8,4 +8,6 @@ require("config.personal");
 require("config.lazy");
 require("config.keymaps");
 require("config.catppuccin");
+
+-- LSP ENABLER
 vim.lsp.enable('intelephense');
