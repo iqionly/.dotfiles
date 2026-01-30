@@ -11,3 +11,10 @@ require("config.catppuccin");
 
 -- LSP ENABLER
 vim.lsp.enable('intelephense');
+
+-- Use this for lightweight
+-- vim.lsp.enable('csharp-ls');
+
+vim.lsp.enable('omnisharp');
+
+require("config.sessions");

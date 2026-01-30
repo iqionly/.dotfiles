@@ -15,7 +15,7 @@ local ensure_installed = {
     "tsx",
     "typescript",
     "twig",
-    "c#",
+    "c_sharp",
     "xml",
     "yaml",
 };

@@ -20,6 +20,9 @@ return {
 
         -- then load the extension
         telescope.load_extension("live_grep_args")
+
+        -- then load the extension dap debugger
+        telescope.load_extension("dap")
     end,
     opts = {
         defaults = {
