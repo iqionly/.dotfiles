@@ -10,3 +10,5 @@ telescope.load_extension("live_grep_args")
 
 -- then load the extension dap debugger
 telescope.load_extension("dap")
+
+telescope.load_extension("fidget")
