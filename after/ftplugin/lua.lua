@@ -1,11 +1,11 @@
-vim.lsp.enable("intelephense");
+vim.lsp.enable("lua_ls");
 
 require('lint').linters_by_ft = {
-    php = { 'phpstan' },
+    php = { 'luacheck' },
 };
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
     require("lint").try_lint()
   end,
-})
+});
