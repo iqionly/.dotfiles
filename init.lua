@@ -1,20 +1,12 @@
 -- Force not using mouse hehe :)
 vim.cmd('set mouse=');
-vim.opt.syntax = "off";
 
+-- Personal Configuration
 require("config.personal");
 
 -- Plugins
 require("config.lazy");
-require("config.keymaps");
 require("config.catppuccin");
 
--- LSP ENABLER
-vim.lsp.enable('intelephense');
-
--- Use this for lightweight
--- vim.lsp.enable('csharp-ls');
-
-vim.lsp.enable('omnisharp');
-
-require("config.sessions");
+-- Keymap Bindings
+require("config.keymaps");

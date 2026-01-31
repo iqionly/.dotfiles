@@ -6,5 +6,6 @@ return {
             cmd = "Neoconf",
             opts = {},
         },
+        { "hoffs/omnisharp-extended-lsp.nvim" },
     },
 };

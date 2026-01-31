@@ -12,12 +12,26 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- go to definition (jump)
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-
+vim.keymap.set("n", "gd", function()
+    if vim.bo.filetype == 'cs' then
+        require('omnisharp_extended').telescope_lsp_definitions() 
+    else
+        vim.lsp.buf.definition()
+    end
+end);
 -- list references (Telescope)
-vim.keymap.set("n", "gr", function()
-  require("telescope.builtin").lsp_references()
-end, { desc = "LSP references" });
+vim.keymap.set("n", "gr", function() 
+    if vim.bo.filetype == 'cs' then
+        require('omnisharp_extended').telescope_lsp_references() 
+    else
+        require("telescope.builtin").lsp_references()
+    end
+end);
+vim.keymap.set("n", "gi", function() 
+    if vim.bo.filetype == 'cs' then
+        require('omnisharp_extended').telescope_lsp_implementation() 
+    end
+end);
 
 -- List Debugger Keymaps
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
@@ -46,3 +60,6 @@ vim.keymap.set('n', '<Leader>ds', function()
   local widgets = require('dap.ui.widgets')
   widgets.centered_float(widgets.scopes)
 end)
+
+-- Diagnostic Keymaps
+vim.keymap.set({'n', 'i'}, '<C-s>e', vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror message at cursor"});
