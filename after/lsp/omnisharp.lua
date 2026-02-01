@@ -9,6 +9,7 @@ return {
             workspaceFolders = false
         }
     },
+    on_attach = require("config.on_attach").on_attach,
     root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
         on_dir(

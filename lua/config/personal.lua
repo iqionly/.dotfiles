@@ -40,6 +40,24 @@ ensure_installed = {
     "yaml",
 };
 
+mason_install = {
+    "phpactor",
+    "omnisharp",
+    "lua-language-server",
+    "html-lsp",
+    "ast-grep",
+    -- DAP
+
+    -- Lint
+    "luacheck",
+    "phpstan",
+
+    -- Formatter
+    "csharpier",
+    "luaformatter",
+    "php-cs-fixer",
+};
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`

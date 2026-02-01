@@ -1,4 +1,4 @@
-vim.lsp.enable("intelephense");
+vim.lsp.enable("phpactor");
 
 require('lint').linters_by_ft = {
     php = { 'phpstan' },
