@@ -6,35 +6,11 @@ vim.keymap.set('v', '<S-Tab>', '<gv')
 
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope [F]ind [F]iles' });
+vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = 'Telescope [F]ind Live [G]rep' });
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope [F]ind [B]buffers' });
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope [F]ind [H]elp' });
+vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Telescope [F]ind [R]esume' });
+vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope [F]ind [K]eymaps' });
+vim.keymap.set('n', '<leader>fp', builtin.git_files, { desc = 'Telescope [F]ind [P]roject Files'});
 
--- List Debugger Keymaps
-vim.keymap.set('n', '<F5>', function() require('dap').continue() end, { desc = "DAP Start/Stop Debugging" })
-vim.keymap.set('n', '<F10>', function() require('dap').step_over() end, { desc = "DAP Step over" })
-vim.keymap.set('n', '<F11>', function() require('dap').step_into() end, { desc = "DAP Step into" })
-vim.keymap.set('n', '<F12>', function() require('dap').step_out() end, { desc = "DAP Step out" })
-vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end, { desc = "DAP Toggle breakpoint" })
-vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end, { desc = "DAP Set breakpoint" })
-vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, { desc = "DAP Set breakpoint with messages" })
-vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end, { desc = "DAP Repl open" })
-vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end, { desc = "DAP Run last" })
-vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
-  require('dap.ui.widgets').hover()
-end, { desc = "DAP Widget hover" })
-vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
-  require('dap.ui.widgets').preview()
-end, { desc = "DAP Widget preview" })
-vim.keymap.set({'n', 'v'}, '<Leader>dc', function()
-    require('dapui').toggle();
-end, { desc = "DAP Windows Open/Close" })
-vim.keymap.set('n', '<Leader>df', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.frames)
-end, { desc = "DAP Widget frames float" })
-vim.keymap.set('n', '<Leader>ds', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.scopes)
-end, { desc = "DAP Widget scope float" })
