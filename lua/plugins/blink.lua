@@ -30,14 +30,33 @@ return {
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- Adjusts spacing to ensure icons are aligned
-            nerd_font_variant = 'mono'
+            nerd_font_variant = 'normal'
         },
 
         -- (Default) Only show the documentation popup when manually triggered
         completion = {
             documentation = {
-                auto_show = false,
+                auto_show = true,
                 auto_show_delay_ms = 500,
+            },
+        },
+
+        -- Signature 
+        signature = {
+            enabled = false,
+            trigger = {
+                -- Show the signature help automatically
+                enabled = true,
+                -- Show the signature help window after typing any of alphanumerics, `-` or `_`
+                show_on_keyword = true,
+                blocked_trigger_characters = {},
+                blocked_retrigger_characters = {},
+                -- Show the signature help window after typing a trigger character
+                show_on_trigger_character = true,
+                -- Show the signature help window when entering insert mode
+                show_on_insert = true,
+                -- Show the signature help window when the cursor comes after a trigger character when entering insert mode
+                show_on_insert_on_trigger_character = true,
             },
         },
 
