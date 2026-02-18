@@ -19,14 +19,13 @@ M.on_attach = function(_, bufnr)
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 	nmap("gs", vim.lsp.buf.signature_help, "Signature Documentation")
 
-	-- nmap ("gD", vim.lsp.buf.declaration, "Goto Declaration")
-	nmap("<leader>gA", vim.lsp.buf.add_workspace_folder, "Workspace Add Folder")
-	nmap("<leader>gR", vim.lsp.buf.remove_workspace_folder, "Workspace Remove Folder")
-	nmap("<leader>gL", function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, "Workspace List Folders")
-
-	nmap("<leader>gV", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
+    -- nmap ("gD", vim.lsp.buf.declaration, "Goto Declaration")
+    vim.keymap.set({'n', 'i'}, "<A-w>", vim.lsp.buf.add_workspace_folder, { desc = "Workspace Add Folder" })
+    vim.keymap.set({'n', 'i'}, "<A-e>", vim.lsp.buf.remove_workspace_folder, { desc = "Workspace Remove Folder" })
+    vim.keymap.set({'n', 'i'}, "<A-z>", function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, { desc = "Workspace List Folders" })
+    vim.keymap.set({'n', 'i'}, "<A-t>", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", { desc = "Vertical Split current buffer or split lsp definition" })
 
     -- List Debugger Keymaps
     vim.keymap.set('n', '<F5>', function() require('dap').continue() end, { desc = "DAP Start/Stop Debugging" })

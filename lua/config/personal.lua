@@ -21,6 +21,9 @@ opt.undofile = true;
 ensure_installed = {
     "blade",
     "c",
+    "css",
+    "scss",
+    "dockerfile",
     "html",
     "javascript",
     "json",
@@ -30,6 +33,7 @@ ensure_installed = {
     "markdown_inline",
     "python",
     "php",
+    "phpdoc",
     "query",
     "regex",
     "tsx",

@@ -55,5 +55,6 @@ return {
             },
         })
     end,
+    on_attach = require("config.on_attach").on_attach,
     filetypes = { 'lua' },
 };
