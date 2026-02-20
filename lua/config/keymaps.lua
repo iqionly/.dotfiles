@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope [F]ind [K
 vim.keymap.set('n', '<leader>fp', builtin.git_files, { desc = 'Telescope [F]ind [P]roject Files'});
 
 vim.keymap.set({'n', 'i'}, "<A-j>", "<cmd>cnext<cr>", { desc = "Move to next or bottom" })
-vim.keymap.set({'n', 'i'}, "<A-k>", "<cmd>cnext<cr>", { desc = "Move to prev or up" })
+vim.keymap.set({'n', 'i'}, "<A-k>", "<cmd>cprev<cr>", { desc = "Move to prev or up" })
 vim.keymap.set({'n', 'i'}, "<M-q>", function()
   for _, win in ipairs(vim.fn.getwininfo()) do
     if win.quickfix == 1 then

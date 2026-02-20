@@ -30,3 +30,12 @@ vim.api.nvim_create_user_command('TSInstallAll', function()
         vim.cmd('TSInstall ' .. lang)
     end
 end, { desc = 'Install all commonly used treesitter parsers' })
+
+-- Enable TS Autotag after Treesitter done
+require('nvim-ts-autotag').setup({
+  opts = {
+    enable_close = true, -- Auto close tags
+    enable_rename = true, -- Auto rename pairs of tags
+    enable_close_on_slash = false -- Auto close on trailing </
+  },
+})
